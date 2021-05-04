@@ -33,4 +33,8 @@ public class JobService {
         return jobRepository.findAll(pageable);
     }
 
+    public Job addJob(Job job){
+        return jobRepository.save(job);
+    }
+
 }
