@@ -1,7 +1,10 @@
 package com.example.job.controller;
 
 import com.example.job.model.Job;
+import com.example.job.model.JobPage;
 import com.example.job.service.JobService;
+import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +21,7 @@ public class JobController {
     }
 
     @GetMapping
-    public ResponseEntity<Job> getJobs(){
-        return new ResponseEntity<>(jobService.getJobs())
+    public ResponseEntity<Page<Job>> getJobs(JobPage jobPage){
+        return new ResponseEntity<>(jobService.getJobs(jobPage), HttpStatus.OK);
     }
 }
