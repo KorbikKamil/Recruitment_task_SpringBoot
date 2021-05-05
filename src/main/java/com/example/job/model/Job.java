@@ -13,7 +13,8 @@ public class Job {
     @Column(name = "Name")
     private String name;
 
-    public Job(){}
+    public Job() {
+    }
 
     public Job(String name) {
         this.name = name;

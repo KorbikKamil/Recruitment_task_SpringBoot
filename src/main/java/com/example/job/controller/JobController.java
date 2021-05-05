@@ -19,12 +19,12 @@ public class JobController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<Job>> getJobs(JobPage jobPage){
+    public ResponseEntity<Page<Job>> getJobs(JobPage jobPage) {
         return new ResponseEntity<>(jobService.getJobs(jobPage), HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<Job> addJob(@RequestBody Job job){
+    public ResponseEntity<Job> addJob(@RequestBody Job job) {
         return new ResponseEntity<>(jobService.addJob(job), HttpStatus.CREATED);
     }
 }

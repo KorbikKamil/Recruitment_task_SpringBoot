@@ -27,13 +27,13 @@ public class JobService {
         jobRepository.save(new Job("job3"));
     }
 
-    public Page<Job> getJobs(JobPage jobPage){
+    public Page<Job> getJobs(JobPage jobPage) {
         Sort sort = Sort.by(jobPage.getSortDirection(), jobPage.getSortBy());
-        Pageable pageable = PageRequest.of(jobPage.getPage(),jobPage.getSize(),  sort);
+        Pageable pageable = PageRequest.of(jobPage.getPage(), jobPage.getSize(), sort);
         return jobRepository.findAll(pageable);
     }
 
-    public Job addJob(Job job){
+    public Job addJob(Job job) {
         return jobRepository.save(job);
     }
 
